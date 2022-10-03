@@ -1,0 +1,80 @@
+
+
+body {
+    background: #cecece
+}
+
+header {
+    background: #000;
+    color: #fff
+}
+
+.left-side,
+.right-side {
+    height: 78vh
+}
+
+.navbar-transparent {
+    background: transparent
+}
+
+.navbar-nav>li>a {
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff
+    
+}
+
+.navbar-nav>li:hover {
+    border-bottom: 1px solid #fff
+}
+
+.navbar-nav>.active {
+    border-bottom: 1px solid #fff
+}
+
+.navbar-brand {
+    font-size:25px;
+    font-family: 'Allerta Stencil', sans-serif;
+    color: #83ff00
+}
+
+.navbar-brand:hover {
+    color: #fff
+}
+
+.left-side img {
+    padding-top: 100px; 
+   
+}
+
+
+.right-side {
+    padding-top: 150px
+}
+
+.right-side h1 {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 2.3em;
+    text-align: center
+}
+
+.right-side p {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold
+}
+
+.btn.order-button {
+    background: transparent;
+    border: 2px solid #83ff00;
+    color: #83ff00;
+    border-radius: 30%;
+    transition: 0.7s;
+    font-size: 25px;
+}
+
+.btn.order-button:hover {
+    border: 2px solid #ce0000;
+    color: #ce0000
+}
