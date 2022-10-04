@@ -1,4 +1,4 @@
-# RetoApi
+# Reto-Angular-RickMorty
 
 ![image](https://user-images.githubusercontent.com/96325513/193893204-a495681b-3925-4cb2-b96a-dc2eba2ac348.png)
 
