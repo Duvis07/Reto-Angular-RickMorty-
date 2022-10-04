@@ -1,33 +1,54 @@
-<div class="row" >
-    <div>
-        <input
-        #inputSearch
-        autofocus
-        type="text"
-        class="form-control"
-        placeholder="Busca un personaje"
-        (keyup)="onSearch(inputSearch.value)"
+<div class="row">
+  <div>
+    <input id="inputSearch"
+      #inputSearch
+      autofocus
+      type="text"
+      class="form-control"
+      placeholder="Busca un personaje de Rick and Morty"
+      (keyup)="onSearch(inputSearch.value)"
+    />
+  </div>
+  <div  class="col-xs-12 col-sm-6 col-md-4"
+   *ngFor="let character of characters  | paginate: { itemsPerPage: 9, currentPage: page }">
+    <div  class="card" [routerLink]="['/rickandmorty-details', character.id]">
+      <div class="card-body">
+        <img
+          [src]="character.image"
+          [alt]="character.name"
+          class="card-img-top"
         />
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let character of characters">
-        <div class="card" [routerLink]="['/rickandmorty-details', character.id]">
-            <div class="image">
-                <img 
-                [src]="character.image" 
-                [alt]="character.name"
-                class="card-img-top">
-            </div>
-            <div class="card-inner">
-                <div class="header">
-                    <h2 [routerLink]="['/rickandmorty-details', character.id]">{{character.name | slice: 0:15}}</h2>
-                    <h4 class="text-muted">{{character.gender}}</h4>
-                    <small class="text-muted">{{character.created | date}}</small>
-                </div>
-            </div>
+      </div>
+      <div class="card-inner">
+        <div class="header">
+          <h2 [routerLink]="['/rickandmorty-details', character.id]">
+            {{ character.name | slice: 0:15 }}
+          </h2>
+          <h4 class="text-muted">{{ character.gender }}</h4>
+          <small class="text-muted">{{ character.created | date }}</small>
         </div>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 t-5 container-notFound" *ngIf="characters.length == 0">
-        <p>Oops, no hay resultados para tu búsqueda, vuelve a intentarlo</p>
-    </div>
+  </div>
+  <div
+    class="col-xs-12 col-sm-12 col-md-12 t-5 container-notFound"
+    *ngIf="characters.length == 0"
+  >
+    <p>Oops, no hay resultados para tu búsqueda, vuelve a intentarlo</p>
+  </div>
 </div>
-<button [ngClass]="'no-hidden'" *ngIf="showGoUpButton" class="btn btn-dark" (click)="onScrollTop()">Go UP</button>
+<!-- <button
+  [ngClass]="'no-hidden'"
+  *ngIf="showGoUpButton"
+  class="btn btn-dark"
+  (click)="onScrollTop()"
+>
+  Go UP
+</button> -->
+<br>
+<pagination-controls
+class="pagination"
+  (pageChange)="page = $event"
+  previousLabel="Anterior"
+  nextLabel="Siguiente"
+></pagination-controls>

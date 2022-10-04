@@ -19,12 +19,19 @@
   
             </tr>
           <tbody class="table table-striped table-dark">
-            <tr  *ngFor="let character of newArray">
+            <tr  *ngFor="let character of newArray  | paginate: { itemsPerPage: 8, currentPage: page }">
               <td><h5>{{character}}</h5></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+    <br>
+<pagination-controls
+class="pagination"
+  (pageChange)="page = $event"
+  previousLabel="Anterior"
+  nextLabel="Siguiente"
+></pagination-controls>
     
     

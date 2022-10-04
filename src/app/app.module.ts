@@ -14,6 +14,7 @@ import { LayoutComponent } from './components/main/layout/layout.component';
 import { MenuComponent } from './components/main/menu/menu.component';
 import { RickandmortyDetailsComponent } from './components/rickandmorty/rickandmorty-details/rickandmorty-details.component';
 import { RickandmortyListComponent } from './components/rickandmorty/rickandmorty-list/rickandmorty-list.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RickandmortyListComponent } from './components/rickandmorty/rickandmort
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

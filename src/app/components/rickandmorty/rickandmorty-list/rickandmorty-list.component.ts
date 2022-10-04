@@ -19,6 +19,8 @@ export class RickandmortyListComponent implements OnInit {
 
   private pageNum = 1;
 
+  page: number = 0;
+
   private query: string = '';
 
   private hideScrollHeight = 200;

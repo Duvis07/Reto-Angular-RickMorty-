@@ -18,6 +18,26 @@
     cursor: pointer;
 }
 
+#inputSearch {
+    margin-top: 25px;
+   font-weight: 800;
+   width: 80%;
+   margin-left: 10%;
+font-size: 25px;
+
+}
+
+.pagination {
+    text-align: center;
+    font-size: 22px;
+    align-items: center;
+   
+   
+   
+}
+    
+
+
 .card.img {
     opacity: 0.7;
     width: 100%;

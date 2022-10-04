@@ -23,6 +23,8 @@ export class CharactersComponent implements OnInit {
 
   newArray: String[] = []
 
+  page: number = 0;
+
   showGoUpButton = false;
 
   private pageNum = 1;
