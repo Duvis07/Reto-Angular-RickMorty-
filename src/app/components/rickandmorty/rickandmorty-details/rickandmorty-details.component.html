@@ -1,25 +1,41 @@
-<button (click)="onGoBack()" class="btn btn-dark btn-lg mt-3">Regresar</button>
-<div class="row justify-content-center mt-3" *ngIf="character$ | async as character">
-    <div class="col-xs-12 col-sm-6 col-md-6 justify-content-center">
-        <div class="card">
-            <div class="image">
-                <img 
-                [src]="character.image" 
-                [alt]="character.name"
-                class="card-img-top"
-                />
-            </div>
-            <div class="card-inner">
-                <div class="header">
-                    <h2>{{character.name | slice: 0:15}}</h2>
-                    <h4 class="text-muted">{{character.gender}}</h4>
-                    <h4 class="text-muted">{{character.species}}</h4>
-                    <h4 class="text-muted">{{character.status}}</h4>
-                    <small class="text-muted">Creation date: {{character.created | date}}</small>
-                </div>
-            </div>
-        </div>
+<div
+  class="row justify-content-center mt-3"
+  *ngIf="character$ | async as character"
+>
+  <div class="col-xs-12 col-sm-6 col-md-6 justify-content-center">
+    <div class="card">
+      <div class="image">
+        <img
+          [src]="character.image"
+          [alt]="character.name"
+          class="card-img-top"
+        />
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Specie</th>
+            <th scope="col">Status</th>
+            <th scope="col">Creation Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ character.name }}</td>
+            <td>{{character.gender}}</td>
+            <td>{{character.species}}</td>
+            <td>{{character.status}}</td>
+            <td>{{character.created | date}}</td>
+          </tr>
+        </tbody>
+      </table>
+     
+        <br />
+        <button (click)="onGoBack()" class="btn btn-primary" id="btnRegresar">
+          Regresar
+        </button>
+      </div>
     </div>
-</div>
-
-
+  </div>
